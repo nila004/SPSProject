@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bill Manager UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="fundm.css">
+</head>
+<body>
+  <div class="container floating">
+    <div class="top-bar">
+      <div class="app-title">Bill Manager</div>
+    </div>
+    <div class="content">
+      <!-- Hidden file input -->
+      <input type="file" id="fileInput" accept=".png,.jpg,.jpeg" style="display: none;">
+      
+      <button class="btn" id="uploadBtn">
+        <i class="fas fa-upload"></i> Upload Bills
+      </button>
+      
+      <button class="btn" id="viewUploadsBtn">
+        <i class="fas fa-edit"></i> Uploaded Bills
+      </button>
+      
+      <button class="btn">
+        <i class="fas fa-check-circle"></i> Payment Status
+      </button>
+      
+      <div class="status-container">
+        <div class="status-text">
+          Total Amount Received: <span class="status-value">$12,450.00</span>
+        </div>
+        <div class="status-text">
+          Total Amount Available: <span class="status-value">$8,720.50</span>
+        </div>
+      </div>
+      
+      <div class="export">
+        <i class="fas fa-file-export"></i> EXPORT
+      </div>
+      
+      <!-- Upload status message -->
+      <div id="uploadStatus" style="margin-top: 15px; text-align: center;"></div>
+    </div>
+  </div>
+
+  <!-- Popup Modal for Uploaded Bills -->
+  <div id="uploadsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Uploaded Bills</h2>
+      <div id="uploadedImagesContainer"></div>
+    </div>
+  </div>
+
+  <!-- Image Preview Modal -->
+<div id="imagePreviewModal" class="modal">
+  <span class="close-preview-btn">&times;</span>
+  <img class="modal-image" id="previewImage" src="" alt="Preview">
+</div>
+  <script src="fundm.js"></script>
+</body>
+</html>
