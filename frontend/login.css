@@ -1,0 +1,138 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #01c3b9, #039aa2);
+  --secondary-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
+  --accent-color: #ff6b6b;
+  --dark-text: #2c3e50;
+  --light-text: #ecf0f3;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #e4ecf2, #d1e3f6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--dark-text);
+}
+
+.login-container {
+  width: 400px;
+  background: var(--card-bg);
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+
+.login-header {
+  background: var(--primary-gradient);
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--light-text);
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+}
+
+.login-header::after,
+.login-header::before {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.login-header::after {
+  width: 120px;
+  height: 120px;
+  bottom: -60px;
+  left: -60px;
+}
+
+.login-header::before {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  right: -40px;
+}
+
+.login-body {
+  padding: 30px;
+}
+
+.login-body label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--dark-text);
+}
+
+.login-body input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.login-body input:focus {
+  border-color: #01c3b9;
+}
+
+.login-btn {
+  width: 100%;
+  background: var(--primary-gradient);
+  color: var(--light-text);
+  border: none;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.switch-role {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.switch-role a {
+  color: #039aa2;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 5px;
+  transition: color 0.2s ease;
+}
+
+.switch-role a:hover {
+  color: #01c3b9;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
