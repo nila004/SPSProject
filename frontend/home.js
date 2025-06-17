@@ -1,19 +1,24 @@
+const { link } = require("fs");
+
 document.addEventListener('DOMContentLoaded', function () {
   const events = [
     {
       title: "Tech Symposium 2025",
       description: "Showcase of student tech innovations across Keralaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaa .",
-      image: "images/image1.jpg"
+      image: "images/image1.jpg",
+      link: "/login"
     },
     {
       title: "AI Bootcamp",
       description: "Hands-on ML, Deep Learning and Generative AI workshop aaaa aaa aaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaa.",
-      image: "images/image2.jpg"
+      image: "images/image2.jpg",
+       link: "/login"
     },
     {
       title: "RescueLink Demo Day",
       description: "Live trial of our event management dashboard system.",
-      image: "images/image3.jpg"
+      image: "images/image3.jpg",
+       link: "/login"
     }
   ];
 
