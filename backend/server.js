@@ -33,18 +33,31 @@ const upload = multer({ storage, limits: { fileSize: 10 * 1024 * 1024 } });
 app.post('/upload', upload.single('bill'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
   res.json({ success: true, message: 'File uploaded successfully', filename: req.file.filename });
-
 });
 
-// Serve frontend
+// Serve static frontend
 const frontendPath = path.join(__dirname, '../frontend');
 app.use(express.static(frontendPath));
 app.use('/uploads', express.static(uploadDir));
 
-
+// Page routes
 app.get('/', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'home.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'login.html'));
+});
+
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'participant.html'));
+});
+
+app.get('/fundm', (req, res) => {
   res.sendFile(path.join(frontendPath, 'fundm.html'));
 });
+
+// Get uploaded files
 app.get('/get-uploads', (req, res) => {
   fs.readdir(uploadDir, (err, files) => {
     if (err) {
@@ -52,22 +65,23 @@ app.get('/get-uploads', (req, res) => {
     }
     res.json(files);
   });
-  app.delete('/delete-upload/:filename', (req, res) => {
-    const filename = req.params.filename;
-    const filePath = path.join(uploadDir, filename);
-
-    fs.unlink(filePath, (err) => {
-      if (err) {
-        console.error('Error deleting file:', err);
-        return res.status(500).json({ success: false, message: 'Error deleting file' });
-      }
-      res.json({ success: true, message: 'File deleted successfully' });
-    });
-  });
-
 });
 
-// Start server
+// Delete file route
+app.delete('/delete-upload/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filePath = path.join(uploadDir, filename);
+
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error('Error deleting file:', err);
+      return res.status(500).json({ success: false, message: 'Error deleting file' });
+    }
+    res.json({ success: true, message: 'File deleted successfully' });
+  });
+});
+
+// Start the server
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
