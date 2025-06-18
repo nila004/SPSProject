@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
   const events = [
     {
-      title: "Tech Symposium 2025",
-      description: "Showcase of student tech innovations across Keralaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaa.",
-      image: "images/image1.jpg",
+      title: "SIGNAL 4.0",
+      description: "Signal is a flagship event of IEEE SPS kerala chapter conducted every year.this year 2025 we are planning to conduct the evnt offline for 3 days on the month of sptember or october",
+      image: "images/image4.jpg",
       link: "/login"
     },
     {
-      title: "AI Bootcamp",
-      description: "Hands-on ML, Deep Learning and Generative AI workshop.",
-      image: "images/image2.jpg",
+      title: "Rescue link",
+      description: "ICFOSS, technical project",
+      image: "images/image5.jpg",
       link: "/login"
     },
     {
-      title: "RescueLink Demo Day",
-      description: "Live trial of our event management dashboard system.",
-      image: "images/image3.jpg",
+      title: "Hack4Good",
+      description: "Hackathon.",
+      image: "images/image6.jpg",
       link: "/login"
     }
   ];
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const card = document.createElement("div");
     card.className = "event-card";
 
-    const shortDescription = event.description.slice(0, 150);
-    const needsToggle = event.description.length > 150;
+    const shortDescription = event.description.slice(0, 100);
+    const needsToggle = event.description.length > 100;
 
     card.innerHTML = `
       <img src="${event.image}" alt="${event.title}" class="event-image" style="cursor: pointer;">
