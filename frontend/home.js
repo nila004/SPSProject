@@ -4,19 +4,19 @@ document.addEventListener('DOMContentLoaded', function () {
       title: "SIGNAL 4.0",
       description: "Signal is a flagship event of IEEE SPS kerala chapter conducted every year.this year 2025 we are planning to conduct the evnt offline for 3 days on the month of sptember or october",
       image: "images/image4.jpg",
-      link: "/login"
+      link: "/fundm"
     },
     {
       title: "Rescue link",
-      description: "ICFOSS, technical project",
+      description: "ICFOSS, technical project", 
       image: "images/image5.jpg",
-      link: "/login"
+      link: "/fundm"
     },
     {
       title: "Hack4Good",
       description: "Hackathon.",
       image: "images/image6.jpg",
-      link: "/login"
+      link: "/fundm"
     }
   ];
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const imageElement = card.querySelector('.event-image');
     imageElement.addEventListener('click', () => {
-      window.location.href = "login.html";  // Change to your actual login page filename
+      window.location.href = "fundm.html";  // Change to your actual login page filename
     });
 
     eventList.appendChild(card);

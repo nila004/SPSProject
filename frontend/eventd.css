@@ -1,0 +1,30 @@
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.dashboard-btn {
+  width: 85%;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #2c2c2c;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;    /* ✅ Removes underline */
+  text-align: center;       /* ✅ Centers text inside anchor */
+  display: inline-block;    /* ✅ Makes anchor behave like a button */
+  line-height: 1.5;
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+  background-color: #1f1f1f;
+}

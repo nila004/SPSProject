@@ -57,6 +57,10 @@ app.get('/fundm', (req, res) => {
   res.sendFile(path.join(frontendPath, 'fundm.html'));
 });
 
+app.get('/eventd', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'eventd.html'));
+});
+
 // Get uploaded files
 app.get('/get-uploads', (req, res) => {
   fs.readdir(uploadDir, (err, files) => {
