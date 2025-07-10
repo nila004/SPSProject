@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const imageElement = card.querySelector('.event-image');
     imageElement.addEventListener('click', () => {
-      window.location.href = "fundm.html";  // Change to your actual login page filename
+      window.location.href = "login.html";  // Change to your actual login page filename
     });
 
     eventList.appendChild(card);

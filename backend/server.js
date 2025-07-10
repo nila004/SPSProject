@@ -3,12 +3,24 @@ const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
 const fs = require('fs');
+const connectDB = require('./db');
+const Upload = require('/TechForum/SPSProject/backend/models/Upload');
+const volunteerRoutes = require('./routes/volunteer');
+
+
+// Connect to MongoDB
+connectDB();
 
 const app = express();
 const PORT = 3000;
+const HOST = '0.0.0.0';
+
+
 
 app.use(cors());
 app.use(express.json());
+app.use('/volunteer', volunteerRoutes);
+
 
 // File upload directory
 const uploadDir = path.join(__dirname, 'uploads');
@@ -86,6 +98,6 @@ app.delete('/delete-upload/:filename', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT,() => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });

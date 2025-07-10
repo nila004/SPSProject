@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="eventd.css" /> <!-- Page-specific styling -->
 </head>
 <body>
+
+  <button id="logoutBtn">Logout</button>
+
   <div class="login-container">
     <div class="login-header">
       Event Details
@@ -24,5 +27,17 @@
       </div>
     </div>
   </div>
+  <script>
+   if (sessionStorage.getItem('volunteerLoggedIn') !== 'true') {
+    window.location.href = '/login';
+  }
+  document.getElementById('logoutBtn').addEventListener('click', function () {
+  sessionStorage.clear(); // 🧹 Clear login status
+  window.location.href = '/login'; // 🔁 Redirect to login
+});
+
+</script>
 </body>
+
+
 </html>
