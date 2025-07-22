@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     
-    fetch('http://192.168.1.6:3000/volunteer/login', {
+    fetch('http://localhost:3000/volunteer/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
