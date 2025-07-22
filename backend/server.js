@@ -6,6 +6,8 @@ const fs = require('fs');
 const connectDB = require('./db');
 const Upload = require('/TechForum/SPSProject/backend/models/Upload');
 const volunteerRoutes = require('./routes/volunteer');
+const participantRoutes = require('./routes/participants');
+
 
 
 // Connect to MongoDB
@@ -20,6 +22,8 @@ const HOST = '0.0.0.0';
 app.use(cors());
 app.use(express.json());
 app.use('/volunteer', volunteerRoutes);
+app.use('/participants', participantRoutes);
+
 
 
 // File upload directory
