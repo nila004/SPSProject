@@ -6,7 +6,8 @@ const participantSchema = new mongoose.Schema({
   year: String,
   membership: String,
   membershipId: String,
-  food: String
+  food: String,
+  password:String
 });
 
 module.exports = mongoose.model('Participant', participantSchema);
